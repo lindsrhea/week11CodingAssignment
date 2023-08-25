@@ -1,0 +1,166 @@
+/* center the board: */
+body {
+    /* flex will display everything in a row so I needed to also change
+    the direction: */
+    display: flex;
+    flex-direction: column;
+    /* then to align the items: */
+    align-items: center;
+    background-color: black;
+    color: rgb(218, 18, 191);
+}
+
+#board{
+    /* The board is a grid: */
+    display: grid;
+    /* there are 3 columns and each column is 150 pixles each */
+    grid-template-columns: 150px 150px 150px;
+    /* Now for the rows: */
+    grid-template-rows: 150px 150px 150px;
+    /* I wanted to add a curser for when you interact with the board: */
+    cursor: pointer;
+    position: relative;
+}
+
+/* To color my spaces I am using the class selector that I made in html */
+.space{
+    color: currentColor;
+    /* my spaces were not in line with the heading so I changed it using margin */
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* classes to make the grid lines colored for the tic tac toe: */
+.right-border{
+    border-right: 0.3em solid aquamarine;
+}
+.bottom-border{
+    border-bottom: 0.3em solid aquamarine;
+}
+
+/* class for cross through: */
+.cross{
+    position: absolute;
+    background-color: red;
+}
+
+/* creating different ways the cross through can appear on board: */
+/* cross through for rows: */
+/* I had to play around with the % in order to figure out which line
+looked best when it went through the middle of the rows and columns */
+.cross-row-1{
+    /* this represents the first row */
+    width:100%;
+    height: 5px;
+    top:15%
+}
+
+.cross-row-2{
+    /* this represents the second row */
+    width:100%;
+    height: 5px;
+    top:48%
+}
+
+.cross-row-3{
+    /* this represents the bottom row */
+    width:100%;
+    height: 5px;
+    top:83%
+}
+
+/* cross through for columns: */
+.cross-column-1  {
+    /* this represents the left column */
+    height:100%;
+    width: 5px;
+    left:15%
+}
+
+.cross-column-2{
+    /* this represents the middle column */
+    height:100%;
+    width: 5px;
+    left: 48%;
+}
+
+.cross-column-3{
+    /* this represents the right column */
+    height:100%;
+    width: 5px;
+    left: 83%;
+}
+
+/* diagonal cross through: */
+.cross-diagonal-1 {
+    width:90%;
+    height: 5px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+
+.cross-diagonal-2 {
+    width:90%;
+    height: 5px;
+    top: 50%;
+    left: 2%;
+    transform: skewY(-45deg);
+}
+
+h1 {
+    color: currentColor
+}
+
+/* id selector for winner: */
+#game-over{
+    text-align: center;
+    border: aquamarine 10px solid;
+    padding: 50px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+h3{
+    color: currentColor;
+    font-size: 5em;
+    margin-top: 0px;
+}
+
+button{
+    background-color: transparent;
+    color: currentColor;
+    border: currentColor 2px solid;
+    pad: 10px;
+    font-size: 2em;
+}
+
+/* determine if game over area is visible on screen: */
+.hide{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+/* to place X or O in spaces: */
+.x-hover:hover::after{
+    /* I created a class called x-hover and hover is the pseudo selector
+    which means that when the mouse is over a space it will be activated.
+    After will place some html inside of the element that x-hover is
+    placed on */
+    content: "X";
+    opacity: 0.5;
+}
+
+.o-hover:hover::after{
+    content: "O";
+    opacity: 0.5;
+}
+
+#replay:hover{
+    background-color: gold;
+}

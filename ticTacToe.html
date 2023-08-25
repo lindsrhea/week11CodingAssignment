@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <!-- link style to html: -->
+    <link href="ticTacToe.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Add header to page: -->
+    <h1>Tic Tac Toe</h1>
+
+    <!-- to create the board: -->
+    <div id="board">
+        <!-- add the spaces: -->
+        <!-- each space will have attributes like data index(number)
+        because the spaces are identified with a number -->
+        <!-- class: used for styling and identifying all the spaces in html -->
+        <div data-index="1" class="space right-border bottom-border"></div>
+        <div data-index="2" class="space right-border bottom-border"></div>
+        <div data-index="3" class="space bottom-border"></div>
+        <div data-index="4" class="space right-border bottom-border"></div>
+        <div data-index="5" class="space right-border bottom-border"></div>
+        <div data-index="6" class="space bottom-border"></div>
+        <div data-index="7" class="space right-border"></div>
+        <div data-index="8" class="space right-border"></div>
+        <div data-index="9" class="space"></div>
+
+        <!-- for the cross through: -->
+        <div id="cross" class="cross"></div>
+
+    </div>
+
+    <!-- winner popup: -->
+    <div id="game-over" class="hide">
+        <h3 id="game-over-message">Winner is X</h3>
+        <button id="replay">Play Again</button>
+    </div>
+
+    <!-- link js file to html: -->
+    <script src="ticTacToe.js"></script>
+
+</body>
+</html>
